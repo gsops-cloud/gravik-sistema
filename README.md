@@ -94,7 +94,12 @@ supabase secrets set RESEND_API_KEY=re_xxx EMAIL_REMETENTE="Sua Gráfica <contat
 O build é 100% estático (`npm run build` → pasta `dist/`), com roteamento por hash —
 funciona em qualquer host estático:
 
-- **Vercel**: importe o repositório, framework "Vite", e configure `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY`.
+- **Vercel**: importe `gsops-cloud/gravik-sistema` com a raiz do projeto (`.`). O arquivo
+   `vercel.json` define `npm run build` e a saída `dist`. Em **Settings → Environment
+   Variables**, configure `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY` para
+   Production (e Preview, se necessário), usando somente a chave Publishable — nunca uma
+   chave Secret. Depois, faça o deploy. No Supabase, adicione o domínio Vercel em
+   **Authentication → URL Configuration** como Site URL e Redirect URL.
 - **GitHub Pages**: adicione `base: '/grafica-livre/'` no `vite.config.ts` e publique a `dist/`.
 
 ## Stack
