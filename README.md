@@ -65,11 +65,13 @@ Para acessar de vários dispositivos, com login e dados no banco:
    > cada usuário continuam isolados por RLS — ninguém enxerga os seus —, mas a cota do
    > projeto é sua. Crie os usuários da sua equipe manualmente em *Authentication → Users*.
 
-5. Copie `.env.example` para `.env` e preencha com os valores de **Settings → API**:
+5. Copie `.env.example` para `.env` e preencha com o **Project URL** e a chave
+   **Publishable** em **Settings → API Keys**. A chave publishable é pública e pode
+   ser usada no navegador; nunca use uma chave **Secret** (`sb_secret_`) no frontend:
 
    ```
    VITE_SUPABASE_URL=https://SEU-PROJETO.supabase.co
-   VITE_SUPABASE_ANON_KEY=SUA-CHAVE-ANON
+   VITE_SUPABASE_PUBLISHABLE_KEY=sua-chave-publishable
    ```
 
 6. `npm run dev` — agora o app abre com landing page + login.
@@ -92,7 +94,7 @@ supabase secrets set RESEND_API_KEY=re_xxx EMAIL_REMETENTE="Sua Gráfica <contat
 O build é 100% estático (`npm run build` → pasta `dist/`), com roteamento por hash —
 funciona em qualquer host estático:
 
-- **Vercel**: importe o repositório, framework "Vite", e configure as duas variáveis `VITE_*`.
+- **Vercel**: importe o repositório, framework "Vite", e configure `VITE_SUPABASE_URL` e `VITE_SUPABASE_PUBLISHABLE_KEY`.
 - **GitHub Pages**: adicione `base: '/grafica-livre/'` no `vite.config.ts` e publique a `dist/`.
 
 ## Stack
