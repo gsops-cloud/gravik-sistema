@@ -1,0 +1,4 @@
+project_id = "gravik-sistema"
+
+[functions.enviar-email]
+verify_jwt = true
