@@ -3,8 +3,6 @@ import dashboardShot from '../assets/screens/dashboard.webp'
 import faturasShot from '../assets/screens/faturas.webp'
 import orcamentosShot from '../assets/screens/orcamentos.webp'
 
-const GITHUB_URL = 'https://github.com/gsops-cloud/gravik-sistema'
-
 const iconProps = {
   width: 22,
   height: 22,
@@ -114,7 +112,6 @@ export default function Landing() {
             <a href="#seguranca" className="text-sm font-medium text-slate-600 transition hover:text-blue-700">Segurança</a>
           </nav>
           <div className="flex items-center gap-3">
-            <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="hidden text-sm font-medium text-slate-600 transition hover:text-slate-950 sm:inline-flex">GitHub</a>
             <Link to="/login" className="inline-flex items-center gap-2 rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-200">
               Acessar sistema <span aria-hidden="true">↗</span>
             </Link>
@@ -227,7 +224,7 @@ export default function Landing() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
           <BrandMark />
           <p className="text-center text-xs text-slate-500">Gestão para gráficas. Orçamentos, produção e financeiro em sintonia.</p>
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer" className="text-sm font-medium text-slate-600 transition hover:text-blue-700">GitHub <span aria-hidden="true">↗</span></a>
+          <span className="text-xs text-slate-500">© {new Date().getFullYear()} Gravik</span>
         </div>
       </footer>
     </div>
